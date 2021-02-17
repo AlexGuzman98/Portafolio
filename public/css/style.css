@@ -304,7 +304,7 @@ template {
   display: none; }
 
 body {
-  background-image: url(/img/bg.png);
+  background-image: url(../../img/bg.png);
   background-size: cover; }
 
 h1 {
