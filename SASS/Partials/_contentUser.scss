@@ -1,0 +1,42 @@
+.content-user{
+    background-color: white;
+    width: 400px;
+    height: 220px;
+    padding-bottom: 600px;
+    top: 100px;
+    border-radius: 1.5rem;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+.foto-personal{
+    margin: 30px 0 0 0;
+    height: 150px;
+    border-radius: 100%;
+}
+.info-redes{
+    ul{
+        display: flex;
+        list-style: none;
+        margin-left: 100px;
+    }
+    li{
+        margin: 10px;
+    }
+}
+.btn-contact{
+    border: none;
+    background-color: $red;
+    padding: 10px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color:white;
+}
+.btn-contact:hover{
+    color: white;
+    background-color: $green;
+    transition: 0.5s;
+}
+.btn-space{
+    margin-top: 20px;
+}

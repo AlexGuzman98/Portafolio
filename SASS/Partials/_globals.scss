@@ -1,0 +1,43 @@
+body{
+     background-image: url(/img/bg.png);
+     background-size: cover;
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+h2,h4{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+}
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 1600px;
+}
+.line{
+    border: 1px solid $red;
+    margin:0 175px 0 175px ;
+}
+.line-portfolio{
+    border: 2px solid $red;
+    border-radius:10px;
+    margin:-20px 400px 0 400px ;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+

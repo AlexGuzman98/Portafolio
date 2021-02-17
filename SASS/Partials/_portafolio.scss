@@ -1,0 +1,43 @@
+.nav-list{
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    li{
+        margin-left: 125px;
+        list-style: none;
+        transition: 1.5s;
+    }
+    a:hover{
+      color: $red;
+    }
+    display: flex;
+}
+.container-info{
+  background-color: white;
+  width: 1150px;
+  height: 220px;
+  padding-bottom: 600px;
+  top: 100px;
+  border-radius: 1.5rem;
+  position: relative;
+  float: right;
+}
+// Tabs Informacion sobre el portafolio
+.tabs-tablist-item {
+  display: block;
+  text-decoration: none;
+}
+.tabs-content-item{
+  margin: 10px 120px 0 120px;
+  transition: 1s;
+}
+.js-content-hidden {
+  display: none;
+}
+.js-active{
+  transition:0.2s;
+  transform: scale(1.5);
+}
+
+
