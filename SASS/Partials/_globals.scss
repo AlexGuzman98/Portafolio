@@ -21,6 +21,8 @@ p{
     font-size: 1.125rem;
     line-height: 1.5rem;
     text-align: center;
+    margin-right: 150px ;
+    margin-left: 150px ;
 }
 .wrapper{
     margin: 0 auto;
@@ -33,7 +35,12 @@ p{
 .line-portfolio{
     border: 2px solid $red;
     border-radius:10px;
-    margin:-20px 400px 0 400px ;
+    margin:-20px 500px 0 500px ;
+}
+.line-knowledge{
+    border: 2px solid $red;
+    border-radius:10px;
+    margin: -10px 520px 0 520px ;
 }
 .clearfix::after {
     content: "";

@@ -1,27 +1,59 @@
-.nav-list{
-    a{
-        text-decoration: none;
-        color: black;
-    }
-    li{
-        margin-left: 125px;
-        list-style: none;
-        transition: 1.5s;
-    }
-    a:hover{
-      color: $red;
-    }
-    display: flex;
-}
 .container-info{
   background-color: white;
   width: 1150px;
-  height: 220px;
-  padding-bottom: 600px;
+  height: 820px;
   top: 100px;
   border-radius: 1.5rem;
   position: relative;
   float: right;
+}
+.nav-list{
+  a{
+      text-decoration: none;
+      color: black;
+  }
+  li{
+      margin-left: 125px;
+      list-style: none;
+      transition: 1.5s;
+  }
+  a:hover{
+    color: $red;
+  }
+  display: flex;
+}
+.knowledge-text{
+  margin-top: 100px;
+  text-align: center;
+}
+.aboutme-text{
+  text-align: center;
+}
+.proyects-port {
+  text-align: center;
+  img{
+    transition: 1s;
+    width: 500px;
+    margin-top: 40px;
+    border: 2.5px solid #ccc;
+    border-radius: 10px;
+  }
+}
+.repositories{
+  li{
+    margin:0 400px 0 350px ;
+    list-style: none;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.140rem;
+    color: black;
+  }
+  a:hover{
+    color: $red;
+  }
 }
 // Tabs Informacion sobre el portafolio
 .tabs-tablist-item {
@@ -29,7 +61,6 @@
   text-decoration: none;
 }
 .tabs-content-item{
-  margin: 10px 120px 0 120px;
   transition: 1s;
 }
 .js-content-hidden {

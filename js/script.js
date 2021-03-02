@@ -47,3 +47,21 @@ setInterval(() => {
     counter = 1;
   }
 }, 8000);
+
+//GIT HUB REPOS
+const urlGit = 'https://api.github.com/users/alexguzman98/repos'
+fetch(urlGit)
+  .then((response) => response.json())
+  .then((data) => {
+    const listaGit = document.getElementById('lista-git');
+    for (let i = 0; i < data.length; i += 1) {
+    // Creo el li para la lista
+      const lista = document.createElement('li');
+      listaGit.appendChild(lista);
+      // Agrego anchor y link para la modal
+      const nombreRepo = document.createElement('a');
+      nombreRepo.setAttribute('href', '#');
+      nombreRepo.innerHTML = data[i].name;
+      lista.appendChild(nombreRepo);
+    }
+  });
