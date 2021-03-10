@@ -1,3 +1,24 @@
+// Oculta todos los ítems excepto el que tiene el id que se pasa como argumento.
+function updateVisibleContent(id) {
+  // Actualiza los divs de contenido.
+  const enlaces = document.querySelectorAll('.tabs-tablist-item');
+  const content = document.querySelectorAll('.tabs-content-item');
+  for (let i = 0; i < content.length; i += 1) {
+    content[i].classList.add('js-content-hidden');
+    if
+    (content[i].getAttribute('id') === id) {
+      content[i].classList.remove('js-content-hidden');
+    }
+  }
+  // Actualiza los enlaces, para mostrar como resaltado el que está seleccionado.
+  for (let i = 0; i < enlaces.length; i += 1) {
+    enlaces[i].classList.remove('js-active');
+    if
+    (enlaces[i].getAttribute('href').substring(1) === id) {
+      enlaces[i].classList.add('js-active');
+    }
+  }
+}
 function clickHandler(event) {
   // Cancela el comportamiento default del enlace.
   event.preventDefault();
@@ -7,31 +28,11 @@ function clickHandler(event) {
   // Llama a la función updateVisibleContent() para actualizar el componente.
   updateVisibleContent(id);
 }
-// Oculta todos los ítems excepto el que tiene el id que se pasa como argumento.
-function updateVisibleContent(id) {
-  // Actualiza los divs de contenido.
-  for (let i = 0; i < content.length; i++) {
-    content[i].classList.add('js-content-hidden');
-    if
-    (content[i].getAttribute('id') === id) {
-      content[i].classList.remove('js-content-hidden');
-    }
-  }
-  // Actualiza los enlaces, para mostrar como resaltado el que está seleccionado.
-  for (let i = 0; i < enlaces.length; i++) {
-    enlaces[i].classList.remove('js-active');
-    if
-    (enlaces[i].getAttribute('href').substring(1) === id) {
-      enlaces[i].classList.add('js-active');
-    }
-  }
-}
 // Obtiene los enlaces.
 const enlaces = document.querySelectorAll('.tabs-tablist-item');
 // Obtiene los divs de contenido.
-const content = document.querySelectorAll('.tabs-content-item');
 // Itera sobre los enlaces, registrando el manejador de los eventos click.
-for (let i = 0; i < enlaces.length; i++) {
+for (let i = 0; i < enlaces.length; i += 1) {
   enlaces[i].addEventListener('click', clickHandler);
 }
 // Oculta todos los elementos, excepto el primero.
@@ -42,14 +43,14 @@ updateVisibleContent(enlaces[0].getAttribute('href').substring(1));
 let counter = 1;
 setInterval(() => {
   document.getElementById(`radio${counter}`).checked = true;
-  counter++;
+  counter += 1;
   if (counter > 5) {
     counter = 1;
   }
 }, 8000);
 
-//GIT HUB REPOS
-const urlGit = 'https://api.github.com/users/alexguzman98/repos'
+// GIT HUB REPOS
+const urlGit = 'https://api.github.com/users/alexguzman98/repos';
 fetch(urlGit)
   .then((response) => response.json())
   .then((data) => {
@@ -60,8 +61,16 @@ fetch(urlGit)
       listaGit.appendChild(lista);
       // Agrego anchor y link para la modal
       const nombreRepo = document.createElement('a');
-      nombreRepo.setAttribute('href', '#');
+      nombreRepo.setAttribute('href', 'https://github.com/AlexGuzman98?tab=repositories');
       nombreRepo.innerHTML = data[i].name;
       lista.appendChild(nombreRepo);
     }
   });
+
+// Form
+const abrirForm = document.getElementById('abrirForm');
+abrirForm.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('userContent').style.display = 'none';
+  document.getElementById('openForm').style.display = 'block';
+});

@@ -9,7 +9,7 @@
 }
 .user-text{
     text-align: center;
-  
+    // display: none;
 }
 .foto-personal{
     margin: 30px 0 0 0;
@@ -27,6 +27,7 @@
     }
 }
 .btn-contact{
+    cursor: pointer;
     border: none;
     background-color: $red;
     padding: 10px 50px;
@@ -40,5 +41,5 @@
     transition: 0.5s;
 }
 .btn-space{
-    margin-top: 20px;
+    margin-top: 5px;
 }

@@ -378,6 +378,7 @@ p {
   margin: 10px; }
 
 .btn-contact {
+  cursor: pointer;
   border: none;
   background-color: #D86558;
   padding: 10px 50px;
@@ -391,7 +392,7 @@ p {
   transition: 0.5s; }
 
 .btn-space {
-  margin-top: 20px; }
+  margin-top: 5px; }
 
 .container-info {
   background-color: white;
@@ -548,7 +549,6 @@ p {
 .formulario {
   text-align: center;
   margin-top: 50px;
-  transition: all 1s ease-in-out;
   display: none; }
   .formulario input {
     text-align: center;
@@ -568,7 +568,8 @@ p {
     color: white; }
   .formulario button:hover {
     background-color: #145B5C;
-    color: white; }
+    color: white;
+    transition: 1s; }
 
 .response {
   text-align: center;
