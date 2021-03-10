@@ -61,7 +61,7 @@ fetch(urlGit)
       listaGit.appendChild(lista);
       // Agrego anchor y link para la modal
       const nombreRepo = document.createElement('a');
-      nombreRepo.setAttribute('href', 'https://github.com/AlexGuzman98?tab=repositories');
+      nombreRepo.setAttribute('href', `${data[i].html_url}`);
       nombreRepo.innerHTML = data[i].name;
       lista.appendChild(nombreRepo);
     }
