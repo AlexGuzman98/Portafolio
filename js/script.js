@@ -59,7 +59,7 @@ fetch(urlGit)
     // Creo el li para la lista
       const lista = document.createElement('li');
       listaGit.appendChild(lista);
-      // Agrego anchor y link para la modal
+      // Agrego anchor y link para el repo correspondiente
       const nombreRepo = document.createElement('a');
       nombreRepo.setAttribute('href', `${data[i].html_url}`);
       nombreRepo.innerHTML = data[i].name;
