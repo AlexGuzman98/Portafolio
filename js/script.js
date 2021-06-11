@@ -74,6 +74,7 @@ abrirForm.addEventListener('click', (e) => {
   document.getElementById('userContent').style.display = 'none';
   document.getElementById('openForm').style.display = 'block';
 });
+// Canvas
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const particles = [];
@@ -95,32 +96,34 @@ function getRandomColor() {
   return randomColor;
 }
 
-const particle = function () {
-  this.x = canvas.width * Math.random();
-  this.y = canvas.height * Math.random();
-  this.vx = 5 * Math.random() -2;
-  this.vy = 4 * Math.random() -2;
-  this.color = getRandomColor();
-};
-
-particle.prototype.draw = function (ctx) {
-  ctx.fillStyle = this.color;
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, 8, 0, 2 * Math.PI);
-  ctx.fill();
-};
-
-particle.prototype.update = function () {
-  this.x += this.vx;
-  this.y += this.vy;
-
-  if (this.x < 0 || this.x > canvas.width) {
-    this.vx = -this.vx;
+class ParticleObject {
+  constructor() {
+    this.x = canvas.width * Math.random();
+    this.y = canvas.height * Math.random();
+    this.vx = 5 * Math.random() - 2;
+    this.vy = 4 * Math.random() - 2;
+    this.color = getRandomColor();
   }
-  if (this.y < 0 || this.y > canvas.height) {
-    this.vy = -this.vy;
+
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 8, 0, 2 * Math.PI);
+    ctx.fill();
   }
-};
+
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > canvas.width) {
+      this.vx = -this.vx;
+    }
+    if (this.y < 0 || this.y > canvas.height) {
+      this.vy = -this.vy;
+    }
+  }
+}
 
 function loop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -132,14 +135,14 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-function initCanvas () {
+function initCanvas() {
   // Set Canvas width and height to window width and height.
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
   // Generate Particles
   for (let i = 0; i < numParticles; i += 1) {
-    particles.push(new particle());
+    particles.push(new ParticleObject());
   }
   // Kick off animations
   loop();
