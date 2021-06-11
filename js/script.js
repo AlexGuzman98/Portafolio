@@ -74,3 +74,75 @@ abrirForm.addEventListener('click', (e) => {
   document.getElementById('userContent').style.display = 'none';
   document.getElementById('openForm').style.display = 'block';
 });
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const particles = [];
+const numParticles = 500;
+
+function getRandomColor() {
+  let r = 0;
+  let g = 0;
+  let b = 0;
+
+  while (r < 100 && g < 100 && b < 100) {
+    r = Math.floor(Math.random() * 256);
+    g = Math.floor(Math.random() * 256);
+    b = Math.floor(Math.random() * 256);
+  }
+
+  const randomColor = `rgb(${r}, ${g}, ${b})`;
+
+  return randomColor;
+}
+
+const particle = function () {
+  this.x = canvas.width * Math.random();
+  this.y = canvas.height * Math.random();
+  this.vx = 5 * Math.random() -2;
+  this.vy = 4 * Math.random() -2;
+  this.color = getRandomColor();
+};
+
+particle.prototype.draw = function (ctx) {
+  ctx.fillStyle = this.color;
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, 8, 0, 2 * Math.PI);
+  ctx.fill();
+};
+
+particle.prototype.update = function () {
+  this.x += this.vx;
+  this.y += this.vy;
+
+  if (this.x < 0 || this.x > canvas.width) {
+    this.vx = -this.vx;
+  }
+  if (this.y < 0 || this.y > canvas.height) {
+    this.vy = -this.vy;
+  }
+};
+
+function loop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < numParticles; i += 1) {
+    particles[i].update();
+    particles[i].draw(ctx);
+  }
+  requestAnimationFrame(loop);
+}
+
+function initCanvas () {
+  // Set Canvas width and height to window width and height.
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Generate Particles
+  for (let i = 0; i < numParticles; i += 1) {
+    particles.push(new particle());
+  }
+  // Kick off animations
+  loop();
+}
+
+initCanvas();

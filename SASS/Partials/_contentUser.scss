@@ -4,8 +4,9 @@
     height: 820px;
     top: 100px;
     border-radius: 1.5rem;
-    position: relative;
-    float: left;
+    position: absolute;
+    top: 50px;
+    left: 300px;
 }
 .user-text{
     text-align: center;
