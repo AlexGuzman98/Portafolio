@@ -356,11 +356,10 @@ p {
   background-color: white;
   width: 400px;
   height: 820px;
-  top: 100px;
   border-radius: 1.5rem;
   position: absolute;
   top: 50px;
-  left: 300px; }
+  left: 200px; }
 
 .user-text {
   text-align: center; }
@@ -399,10 +398,9 @@ p {
   background-color: white;
   width: 1150px;
   height: 820px;
-  top: 100px;
   border-radius: 1.5rem;
   position: absolute;
-  left: 750px;
+  left: 650px;
   top: 50px; }
 
 .nav-list {
@@ -579,3 +577,10 @@ p {
 .response {
   text-align: center;
   margin: 50px auto; }
+
+#canvas {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0; }
