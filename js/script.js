@@ -80,20 +80,12 @@ const ctx = canvas.getContext('2d');
 const particles = [];
 const numParticles = 500;
 
-function getRandomColor() {
-  let r = 0;
-  let g = 0;
-  let b = 0;
-
-  while (r < 100 && g < 100 && b < 100) {
-    r = Math.floor(Math.random() * 256);
-    g = Math.floor(Math.random() * 256);
-    b = Math.floor(Math.random() * 256);
-  }
-
-  const randomColor = `rgb(${r}, ${g}, ${b})`;
-
-  return randomColor;
+function getColor() {
+  const r = 0;
+  const g = 0;
+  const b = 0;
+  const Color = `rgb(${r}, ${g}, ${b})`;
+  return Color;
 }
 
 class ParticleObject {
@@ -102,7 +94,7 @@ class ParticleObject {
     this.y = canvas.height * Math.random();
     this.vx = 5 * Math.random() - 2;
     this.vy = 4 * Math.random() - 2;
-    this.color = getRandomColor();
+    this.color = getColor();
   }
 
   draw() {
@@ -147,5 +139,4 @@ function initCanvas() {
   // Kick off animations
   loop();
 }
-
 initCanvas();
