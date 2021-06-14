@@ -78,7 +78,7 @@ abrirForm.addEventListener('click', (e) => {
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const particles = [];
-const numParticles = 500;
+const numParticles = 1000;
 
 function getColor() {
   const r = 0;
@@ -109,10 +109,10 @@ class ParticleObject {
     this.y += this.vy;
 
     if (this.x < 0 || this.x > canvas.width) {
-      this.vx = -this.vx;
+      this.vx = +this.vx;
     }
     if (this.y < 0 || this.y > canvas.height) {
-      this.vy = -this.vy;
+      this.vy = +this.vy;
     }
   }
 }
